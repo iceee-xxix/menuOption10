@@ -10,6 +10,7 @@ use App\Http\Controllers\admin\Promotion;
 use App\Http\Controllers\admin\Table;
 use App\Http\Controllers\admin\Rider;
 use App\Http\Controllers\admin\Stock;
+use App\Http\Controllers\admin\Timer;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\Delivery;
 use App\Http\Controllers\Main;
@@ -84,6 +85,7 @@ Route::middleware(['role:admin'])->group(function () {
     Route::post('/admin/order/ListOrderPay', [Admin::class, 'ListOrderPay'])->name('ListOrderPay');
     Route::post('/admin/order/ListOrderPayRider', [Admin::class, 'ListOrderPayRider'])->name('ListOrderPayRider');
     Route::post('/admin/order/listOrderDetail', [Admin::class, 'listOrderDetail'])->name('listOrderDetail');
+    Route::post('/admin/order/listOrderDetailTime', [Timer::class, 'listOrderDetailTime'])->name('listOrderDetailTime');
     Route::post('/admin/order/listOrderDetailRider', [Admin::class, 'listOrderDetailRider'])->name('listOrderDetailRider');
     Route::post('/admin/order/listOrderDetailPay', [Admin::class, 'listOrderDetailPay'])->name('listOrderDetailPay');
     Route::post('/admin/order/generateQr', [Admin::class, 'generateQr'])->name('generateQr');
@@ -136,7 +138,6 @@ Route::middleware(['role:admin'])->group(function () {
     //จัดการโต้ะและเพิ่ม Qr code
     Route::get('/admin/OrderRider', [Rider::class, 'OrderRider'])->name('OrderRider');
     Route::post('/admin/OrderRider/listData', [Rider::class, 'OrderRiderlistData'])->name('OrderRiderlistData');
-
     //เมนูอาหาร
     Route::get('/admin/menu', [Menu::class, 'menu'])->name('menu');
     Route::post('/admin/menu/menulistData', [Menu::class, 'menulistData'])->name('menulistData');
@@ -189,6 +190,8 @@ Route::middleware(['role:admin'])->group(function () {
     Route::get('/admin/expenses/edit/{id}', [Expenses::class, 'ExpensesEdit'])->name('ExpensesEdit');
     Route::post('/admin/expenses/save', [Expenses::class, 'ExpensesSave'])->name('ExpensesSave');
     Route::post('/admin/expenses/delete', [Expenses::class, 'ExpensesDelete'])->name('ExpensesDelete');
+    //รายจ่าย
+    Route::get('/admin/time', [Timer::class, 'time'])->name('time');
 });
 
 

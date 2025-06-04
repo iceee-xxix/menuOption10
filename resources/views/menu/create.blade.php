@@ -51,6 +51,25 @@
                                             <input class="form-control" type="file" id="file" name="file">
                                         </div>
                                     </div>
+                                    <h6>สำหรับจับเวลา</h6>
+                                    <div class="row g-3 mb-3">
+                                        <div class="col-md-4">
+                                            <div class="form-check form-switch">
+                                                <label class="form-check-label" for="is_time">เปิด/ปิด ตัวจับเวลา</label>
+                                                <input class="form-check-input" type="checkbox" role="switch" id="is_time" name="is_time">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row g-3 mb-3">
+                                        <div class="col-md-2">
+                                            <label for="hours" class="form-label">จำนวนชั่วโมงที่ต้องการจับ : </label>
+                                            <input class="form-control" type="number" id="hours" name="hours" placeholder="ชั่วโมง" max="10" min="0">
+                                        </div>
+                                        <div class="col-md-2">
+                                            <label for="minutes" class="form-label">&nbsp;</label>
+                                            <input class="form-control" type="number" id="minutes" name="minutes" placeholder="นาที" max="59" min="0">
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="card-footer d-flex justify-content-end">
                                     <button type="submit" class="btn btn-outline-primary">บันทึก</button>

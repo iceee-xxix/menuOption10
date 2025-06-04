@@ -56,6 +56,7 @@ class Category extends Controller
         if (!isset($input['id'])) {
             $category = new Categories();
             $category->name = $input['name'];
+            $category->is_recommend = isset($input['recommend']) ? 1 : 0;
             if ($category->save()) {
                 if ($request->hasFile('file')) {
                     $file = $request->file('file');
@@ -72,10 +73,11 @@ class Category extends Controller
         } else {
             $category = Categories::find($input['id']);
             $category->name = $input['name'];
+            $category->is_recommend = isset($input['recommend']) ? 1 : 0;
             if ($category->save()) {
                 if ($request->hasFile('file')) {
                     $categories_file = Categories_files::where('categories_id', $input['id'])->delete();
-                    
+
                     $file = $request->file('file');
                     $filename = time() . '_' . $file->getClientOriginalName();
                     $path = $file->storeAs('image', $filename, 'public');

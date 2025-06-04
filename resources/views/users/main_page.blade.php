@@ -104,6 +104,30 @@ $config = Config::first();
                 <div class="mt-1 fw-bold" style="font-size: 13px;color:<?= ($config->color_font != '')  ? $config->color_font :  '#ffffff' ?>;">ห้องน้ำสะอาด</div>
             </div>
         </div> -->
+        @if($category_recommend->isNotEmpty())
+        <div class="title-food">
+            โปรโมชั่น
+        </div>
+        <div class="gap-2 py-2">
+            <div class="row py-2">
+                @foreach($category_recommend as $rs)
+                <div class="col-6 mb-2">
+                    <div class="food-box">
+                        <a href="{{route('detail',$rs->id)}}" style="text-decoration: none;" class="d-flex flex-column justify-content-center align-items-center">
+                            <?php if ($rs['files']) { ?>
+                                <img src="{{ url('storage/'.$rs['files']->file) }}" alt="icon">
+                            <?php } else { ?>
+                                <img src="{{ asset('foods/default-photo.png') }}" alt="icon">
+                            <?php } ?>
+                            <div class="food-label mt-2">{{$rs->name}}</div>
+                        </a>
+                    </div>
+                </div>
+                @endforeach
+            </div>
+        </div>
+        @endif
+        @if($category->isNotEmpty())
         <div class="title-food">
             หมวดอาหาร
         </div>
@@ -125,6 +149,7 @@ $config = Config::first();
                 @endforeach
             </div>
         </div>
+        @endif
     </div>
 </div>
 

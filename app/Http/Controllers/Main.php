@@ -28,8 +28,9 @@ class Main extends Controller
             session(['table_id' => $table_id]);
         }
         $promotion = Promotion::where('is_status', 1)->get();
-        $category = Categories::has('menu')->with('files')->get();
-        return view('users.main_page', compact('category', 'promotion'));
+        $category = Categories::where('is_recommend', 0)->has('menu')->with('files')->get();
+        $category_recommend = Categories::where('is_recommend', 1)->has('menu')->with('files')->get();
+        return view('users.main_page', compact('category', 'category_recommend', 'promotion'));
     }
 
     public function detail($id)

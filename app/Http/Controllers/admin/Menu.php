@@ -66,6 +66,9 @@ class Menu extends Controller
             $menu->categories_id = $input['categories_id'];
             $menu->base_price = $input['base_price'];
             $menu->detail = $input['detail'];
+            $menu->is_time = isset($input['is_time']) ? 1 : 0;
+            $menu->hours = ($input['hours']) ? $input['hours'] : 0;
+            $menu->minutes = ($input['minutes']) ? $input['minutes'] : 0;
             if ($menu->save()) {
                 if ($request->hasFile('file')) {
                     $file = $request->file('file');
@@ -85,6 +88,9 @@ class Menu extends Controller
             $menu->categories_id = $input['categories_id'];
             $menu->base_price = $input['base_price'];
             $menu->detail = $input['detail'];
+            $menu->is_time = isset($input['is_time']) ? 1 : 0;
+            $menu->hours = ($input['hours']) ? $input['hours'] : 0;
+            $menu->minutes = ($input['minutes']) ? $input['minutes'] : 0;
             if ($menu->save()) {
                 if ($request->hasFile('file')) {
                     $categories_file = MenuFiles::where('menu_id', $input['id'])->delete();

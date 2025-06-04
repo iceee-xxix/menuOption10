@@ -27,9 +27,17 @@
                                             <label for="file" class="form-label">รูปภาพหมวดหมู่ : </label>
                                             <div class="input-group mb-3">
                                                 <input class="form-control" type="file" id="file" name="file">
-                                                <a href="{{($info['files']) ? url('storage/'.$info['files']->file) : 'javascript:void(0);'}}" 
-                                                {{($info['files']) ? 'target="_blank" ' : ''}}
-                                                class="btn btn-outline-secondary" type="button"><i class="bx bx-search-alt-2"></i></a>
+                                                <a href="{{($info['files']) ? url('storage/'.$info['files']->file) : 'javascript:void(0);'}}"
+                                                    {{($info['files']) ? 'target="_blank" ' : ''}}
+                                                    class="btn btn-outline-secondary" type="button"><i class="bx bx-search-alt-2"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row g-3 mb-3">
+                                        <div class="col-md-4">
+                                            <div class="form-check form-switch">
+                                                <label class="form-check-label" for="recommend">หมวดหมู่แนะนำ</label>
+                                                <input class="form-check-input" type="checkbox" role="switch" id="recommend" name="recommend" {{ ($info->is_recommend == 1) ? 'checked' : ''}}>
                                             </div>
                                         </div>
                                     </div>

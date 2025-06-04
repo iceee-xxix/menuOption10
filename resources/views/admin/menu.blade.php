@@ -39,6 +39,12 @@ $config = Config::first();
                 <div data-i18n="Analytics">ออเดอร์ออนไลน์</div>
             </a>
         </li>
+        <li class="menu-item {{ ($function_key == 'time') ? 'active' : '' }}">
+            <a href="{{route('time')}}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-time-five"></i>
+                <div data-i18n="Analytics">จับเวลา</div>
+            </a>
+        </li>
         <li class="menu-header small text-uppercase"><span class="menu-header-text">ตั้งค่า</span></li>
         <li class="menu-item {{ ($function_key == 'config') ? 'active' : '' }}">
             <a href="{{route('config')}}" class="menu-link">

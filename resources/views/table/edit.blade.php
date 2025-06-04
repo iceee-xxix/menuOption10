@@ -18,8 +18,16 @@
                                 <div class="card-body">
                                     <div class="row g-3 mb-3">
                                         <div class="col-md-12">
-                                            <label for="table_number" class="form-label">เลขโต้ะ : </label>
-                                            <input type="text" class="form-control" id="table_number" name="table_number" value="{{ old('table_number', $info->table_number) }}" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+                                            <label for="table_number" class="form-label">เลขโต้ะ/เลขห้อง : </label>
+                                            <input type="text" class="form-control" id="table_number" name="table_number" value="{{ old('table_number', $info->table_number) }}">
+                                        </div>
+                                    </div>
+                                    <div class="row g-3 mb-3">
+                                        <div class="col-md-4">
+                                            <div class="form-check form-switch">
+                                                <label class="form-check-label" for="is_time">เปิด/ปิด ตรวจจับเวลา</label>
+                                                <input class="form-check-input" type="checkbox" role="switch" id="is_time" name="is_time" {{ ($info->is_time == 1) ? 'checked' : ''}}>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>

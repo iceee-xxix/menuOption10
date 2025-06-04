@@ -3,7 +3,7 @@
 <link rel="stylesheet" href="https://cdn.datatables.net/2.2.2/css/dataTables.dataTables.css" />
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <style>
-    svg{
+    svg {
         width: 100%;
     }
 </style>

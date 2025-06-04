@@ -28,6 +28,14 @@
                                             <input class="form-control" type="file" id="file" name="file">
                                         </div>
                                     </div>
+                                    <div class="row g-3 mb-3">
+                                        <div class="col-md-4">
+                                            <div class="form-check form-switch">
+                                                <label class="form-check-label" for="recommend">หมวดหมู่แนะนำ</label>
+                                                <input class="form-check-input" type="checkbox" role="switch" id="recommend" name="recommend">
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="card-footer d-flex justify-content-end">
                                     <button type="submit" class="btn btn-outline-primary">บันทึก</button>
